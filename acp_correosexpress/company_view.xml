@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <record id="acp_correos_company" model="ir.ui.view">
+            <field name="name">res.company.correos</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Mensajeria Correos Express">                      
+                        <group>
+                            <field name="correxpress_username"/>
+                            <field name="correxpress_password" />
+                            <field name="correxpress_code" />                                
+                            <field name="correxpress_carrier_id"/>
+                            <field name="correxpress_printer"/>
+                            <field name="correxpress_debug"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+       </record>    
+    </data>
+</openerp>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <AuthInfo xmlns="http://www.mrw.es/">
+      <CodigoFranquicia>${franchise}</CodigoFranquicia>
+      <CodigoAbonado>${subscriber}</CodigoAbonado>
+      <CodigoDepartamento>${department}</CodigoDepartamento>
+      <UserName>${username}</UserName>
+      <Password>${password}</Password>
+    </AuthInfo>
+  </soap:Header>
+  <soap:Body>
+    <GetEtiquetaEnvio xmlns="http://www.mrw.es/">
+      <request>
+        <NumeroEnvio>${numero}</NumeroEnvio>
+        <SeparadorNumerosEnvio>${separador_numero}</SeparadorNumerosEnvio>
+        <FechaInicioEnvio>${inicio_fecha}</FechaInicioEnvio>
+        <FechaFinEnvio>${fin_envio}</FechaFinEnvio>
+        <TipoEtiquetaEnvio>${etiqueta_envio}</TipoEtiquetaEnvio>
+        <ReportTopMargin>${top_margin}</ReportTopMargin>
+        <ReportLeftMargin>${left_margin}</ReportLeftMargin>
+      </request>
+    </GetEtiquetaEnvio>
+  </soap:Body>
+</soap:Envelope>

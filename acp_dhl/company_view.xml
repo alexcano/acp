@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <record id="acp_dhl_company" model="ir.ui.view">
+            <field name="name">res.company.correos</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Configuracion Mensajeria DHL">
+                        <group>
+                            <field name="dhl_carrier_id" required="1"/>
+                        </group>
+                        <group>
+                            <field mode="tree" name="dhl_ids">
+                                <tree editable="bottom">
+                                    <field name="company_id" invisible="1" />
+                                    <field name="name" required="1"/>
+                                    <field name="username" required="1"/>
+                                    <field name="password" required="1"/>
+                                    <field name="debug"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+       </record>
+    </data>
+</openerp>

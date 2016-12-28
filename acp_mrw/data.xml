@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+<!-- 
+        Forma de Envio MRW
+-->
+        <record id="MRW" model="delivery.carrier">
+          <field name="name" >MRW</field>
+          <field name="partner_id" >1</field>
+          <field name="product_id" >3101</field>
+          <field name="amount" >0</field>
+          <field name="free_if_more_than" eval="False"/>
+          <field name="use_detailed_pricelist" eval="False"/>
+          <field name="active" eval="True"/>      
+        </record>
+  </data>
+</openerp>

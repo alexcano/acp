@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record id="acp_mrw_stock_picking_tree" model="ir.ui.view">
+      <field name="name">acp_mrw.stock.picking.tree</field>
+      <field name="model">stock.picking</field>
+      <field name="priority">30</field>
+      <field name="inherit_id" ref="stock.vpicktree" />
+      <field name="arch" type="xml">
+        <field name="state" position="after">
+          <field name="carrier_id" />
+          <field name="carrier_tracking_ref" />
+          <field name="mrw_codigo_servicio" />
+          <field name="weight" />
+          <field name="number_of_packages" />
+        </field>
+      </field>
+    </record>
+    <record id="acp_mrw_stock_picking_form" model="ir.ui.view">
+      <field name="name">acp_mrw.stock.picking.form</field>
+      <field name="model">stock.picking</field>
+      <field name="priority">30</field>
+      <field name="inherit_id" ref="stock.view_picking_form" />
+      <field name="arch" type="xml">
+        <xpath expr="/form/header/button[@name='do_unreserve']" position="after">
+          <button name="button_mrwenvio" states="done,waiting,confirmed,assigned,partially_available" string="Envio MRW" type="object" />
+          <button name="button_mrwetiqueta" states="done,waiting,confirmed,assigned,partially_available" string="Etiqueta MRW" type="object" />
+        </xpath>
+        <field name="carrier_tracking_ref" position="after">
+          <field name="mrw_codigo_servicio" readonly="0" />
+          <field name="mrw_fecha_recogida" string="Fecha recogida solicitada" />
+          <field name="mrw_enfranquicia" />
+          <field name="mrw_entregasabado" readonly="0" />
+          <field name="mrw_reembolso" readonly="0" />
+          <field name="mrw_importe_reembolso" readonly="0" />
+          <group colspan="4">
+            <field name="carrier_error" />
+          </group>
+        </field>
+        <field name="partner_id" position="after">
+          <field name="delivery_direccion" string="Direccion" />
+          <field name="delivery_zip" string="Codigo Postal" />
+          <field name="delivery_poblacion" string="Población" />
+          <field name="delivery_provincia" string="Provincia" />
+          <field name="delivery_pais" string="Pais" />
+          <field name="delivery_telefono" string="Telefono" />
+          <field name="delivery_contacto" string="Persona Contacto" />
+        </field>
+        <field name="number_of_packages" position="after">
+          <field name="observaciones" />
+        </field>
+      </field>
+    </record>
+  </data>
+</openerp>

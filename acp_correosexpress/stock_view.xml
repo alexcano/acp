@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record id="acp_correos_stock_picking_form" model="ir.ui.view">
+      <field name="name">acp_correos.stock.picking.form</field>
+      <field name="model">stock.picking</field>
+      <field name="priority">32</field>
+      <field name="inherit_id" ref="stock.view_picking_form" />
+      <field name="arch" type="xml">
+        <xpath expr="/form/header/button[last()]" position="after">
+          <button name="button_correxpress_envio" string="Envio CORREOS EXPRESS" type="object"  attrs="{'invisible':[('correxpress', '=', False)]}" />
+        </xpath>
+        <field name="carrier_id" position="replace">
+            <field name="carrier_id" on_change="onchange_carrier_correos_id(carrier_id,company_id,state)"/>
+        </field>
+        <xpath expr="//page[@string='Additional Info']/group[last()]" position="after">
+          <field name="correxpress" invisible="1"/>
+          <separator string="Correos Express" attrs="{'invisible':[('correxpress', '=', False)]}"/>
+          <group attrs="{'invisible':[('correxpress', '=', False)]}">
+            <group colspan="4">
+              <button name="button_correxpress_etiqueta" string="Etiqueta" type="object" attrs="{'invisible':[('correxpress_numenvio', '=', False)]}"/>      
+            </group>
+            <group>
+              <field name="correxpress_producto" required="0" attrs="{'readonly':[('carrier_tracking_ref', '!=', False)],'required':[('correxpress', '=', True)]}"/> 
+              <field name="correxpress_portes" required="0" attrs="{'readonly':[('carrier_tracking_ref', '!=', False)],'required':[('correxpress', '=', True)]}"/>
+              <field name="correxpress_reembolso" attrs="{'readonly':[('carrier_tracking_ref', '!=', False)]}"/>
+              <field name="correxpress_entrsabado" invisible="1" />
+              <field name="correxpress_seguro"  attrs="{'readonly':[('carrier_tracking_ref', '!=', False)]}" />  
+            </group>
+            <group>                                       
+              <field name="correxpress_fecha" readonly="0"/>
+              <field name="correxpress_ref" readonly="1"/>
+              <field name="correxpress_refcli" readonly="1"/>            
+            </group>
+            <group>
+              <field name="correxpress_numbultos" invisible="1"/>
+              <field name="correxpress_kilos" invisible="1"/>
+              <field name="correxpress_volumen" invisible="1"/>
+              <field name="correxpress_alto" invisible="1" />
+              <field name="correxpress_largo" invisible="1"/>
+              <field name="correxpress_ancho" invisible="1"/>
+            </group>
+            <group colspan="4">
+              <field name="correxpress_observaciones"  attrs="{'readonly':[('carrier_tracking_ref', '!=', False)]}"/>
+            </group>            
+            <group>              
+              <field name="correxpress_numenviovuelta"  attrs="{'readonly':[('carrier_tracking_ref', '!=', False)]}"/>
+              <field name="correxpress_numenvio" invisible="1" />
+              <field name="correxpress_codunico" invisible="1" />              
+              <field name="correxpress_error" invisible="1" />
+            </group>
+            <group colspan="4">
+              <field name="correxpress_mensaje" invisible="1"/>
+            </group>            
+            <group colspan="4"> 
+                <field mode="tree" name="correxpress_bultos_ids" readonly="1" nolabel="1">
+                    <tree editable="bottom">
+                        <field name="picking_id" invisible="1" />
+                        <field name="numbulto" required="1"/>
+                        <field name="referencia" invisible="1"/>                        
+                        <field name="descripcion" invisible="1"/> 
+                        <field name="observaciones" invisible="1"/> 
+                        <field name="kilos" required="1"/>
+                        <field name="volumen" invisible="1"/> 
+                        <field name="alto" invisible="1"/> 
+                        <field name="largo" invisible="1"/> 
+                        <field name="ancho" invisible="1"/> 
+                        <field name="codbarras" readonly="1"/> 
+                    </tree>
+                </field> 
+            </group>                                                     
+          </group>
+        </xpath>
+      </field>
+    </record>
+    <record id="acp_correos_stock_picking_form_dhl" model="ir.ui.view">
+      <field name="name">acp_correos.stock.picking.form.mrw</field>
+      <field name="model">stock.picking</field>
+      <field name="priority">30</field>
+      <field name="inherit_id" ref="acp_mrw.acp_mrw_stock_picking_form" />
+      <field name="arch" type="xml">
+       <xpath expr="//page[@string='Additional Info']/group[last()]" position="after">
+          <field name="mrw"/>         
+       </xpath>       
+       <button name="button_mrwenvio" position="replace">
+            <button name="button_mrwenvio" states="done,waiting,confirmed,assigned,partially_available" string="Envio MRW" type="object" attrs="{'invisible':['|',('mrw', '=', False)]}"/>
+        </button>
+        <button name="button_mrwetiqueta" position="replace">
+            <button name="button_mrwetiqueta" states="done,waiting,confirmed,assigned,partially_available" string="Etiqueta MRW" type="object" attrs="{'invisible':['|',('mrw', '=', False)]}"/>
+        </button>
+        <field name="mrw_codigo_servicio" position="replace">
+            <field name="mrw_codigo_servicio" readonly="0" attrs="{'invisible':[('mrw', '=', False)]}"/>
+        </field>
+        <field name="mrw_fecha_recogida" position="replace">
+            <field name="mrw_fecha_recogida" string="Fecha recogida solicitada" attrs="{'invisible':[('mrw', '=', False)]}"/>
+        </field>
+        <field name="mrw_enfranquicia" position="replace">
+            <field name="mrw_enfranquicia" attrs="{'invisible':[('mrw', '=', False)]}"/>
+        </field>
+        <field name="mrw_entregasabado" position="replace">
+            <field name="mrw_entregasabado" readonly="0" attrs="{'invisible':[('mrw', '=', False)]}"/>
+        </field>
+        <field name="mrw_reembolso" position="replace">
+            <field name="mrw_reembolso" readonly="0" attrs="{'invisible':[('mrw', '=', False)]}"/>
+        </field>
+        <field name="mrw_importe_reembolso" position="replace">
+            <field name="mrw_importe_reembolso" readonly="0" attrs="{'invisible':[('mrw', '=', False)]}"/>
+        </field>
+        <field name="carrier_error" position="replace">
+            <field name="carrier_error" attrs="{'invisible':[('mrw', '=', False)]}"/>
+        </field>
+        <field name="observaciones" position="replace">
+            <field name="observaciones" attrs="{'invisible':[('mrw', '=', False)]}"/>
+        </field>
+      </field>
+    </record>
+  </data>
+</openerp>

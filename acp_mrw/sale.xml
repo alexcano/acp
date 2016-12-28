@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+	  <!--
+    <record id="acp_mrw_sale_view_order_form" model="ir.ui.view">
+      <field name="name">acp_mrw.sale.view_order.form</field>
+      <field name="model">sale.order</field>
+      <field name="priority">30</field>
+      <field name="inherit_id" ref="acp_rc.acp_rc_sale_view_order_form_rc" />
+      <field name="arch" type="xml">
+        <field name="tracking" position="after">
+          <field name="carrier_tracking_ref"/>
+        </field>
+      </field>
+    </record>
+    -->
+  </data>
+</openerp>

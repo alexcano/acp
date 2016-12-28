@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record id="acp_dhl_stock_picking_form" model="ir.ui.view">
+      <field name="name">acp_dhl.stock.picking.form</field>
+      <field name="model">stock.picking</field>
+      <field name="priority">31</field>
+      <field name="inherit_id" ref="stock.view_picking_form" />
+      <field name="arch" type="xml">
+        <xpath expr="/form/header/button[last()]" position="after">
+          <button name="button_dhl_envio" string="Envio DHL" type="object"  attrs="{'invisible':[('dhl', '=', False)]}" />
+          <button name="button_dhl_etiqueta" string="Etiqueta DHL" type="object"  attrs="{'invisible':[('dhl', '=', False)]}" />
+        </xpath>
+        <field name="carrier_id" position="replace">
+            <field name="carrier_id" on_change="onchange_carrier_id(carrier_id,company_id,state)"/>
+        </field>
+        <xpath expr="//page[@string='Additional Info']/group[last()]" position="after">
+          <field name="dhl" invisible="1"/>
+          <separator string="DHL" attrs="{'invisible':[('dhl', '=', False)]}"/>
+          <group attrs="{'invisible':[('dhl', '=', False)]}">
+            <group>
+              <field name="dhl_accountnumber_id"  attrs="{'required':[('dhl', '=', True)]}"/>
+              <field name="dhl_reference_code"/>
+              <field name="dhl_ship_datetime" />
+              <field name="dhl_request_pickup" />
+              <field name="dhl_pickup_time" widget="float_time" />
+              <field name="dhl_special_pickup_instructions"/>
+            </group>
+            <group>
+              <field name="dhl_tracking_number" readonly="1"/>
+              <field name="dhl_identification_number" readonly="1"/>
+              <field name="dhl_service_type" readonly="1"/>
+              <field name="dhl_drop_off_type" readonly="0"/>
+              <field name="dhl_currency" readonly="1"/>
+              <field name="dhl_unit" readonly="1"/>
+            </group>
+          </group>
+        </xpath>
+      </field>
+    </record>
+
+    <record id="acp_dhl_stock_picking_form_dhl" model="ir.ui.view">
+      <field name="name">acp_dhl.stock.picking.form.mrw</field>
+      <field name="model">stock.picking</field>
+      <field name="inherit_id" ref="acp_mrw.acp_mrw_stock_picking_form" />
+      <field name="arch" type="xml">
+        <button name="button_mrwenvio" position="replace">
+            <button name="button_mrwenvio" states="done,waiting,confirmed,assigned,partially_available" string="Envio MRW" type="object" attrs="{'invisible':['|',('dhl', '=', True)]}"/>
+        </button>
+        <button name="button_mrwetiqueta" position="replace">
+            <button name="button_mrwetiqueta" states="done,waiting,confirmed,assigned,partially_available" string="Etiqueta MRW" type="object" attrs="{'invisible':['|',('dhl', '=', True)]}"/>
+        </button>
+        <field name="mrw_codigo_servicio" position="replace">
+            <field name="mrw_codigo_servicio" readonly="0" attrs="{'invisible':[('dhl', '=', True)]}"/>
+        </field>
+        <field name="mrw_fecha_recogida" position="replace">
+            <field name="mrw_fecha_recogida" string="Fecha recogida solicitada" attrs="{'invisible':[('dhl', '=', True)]}"/>
+        </field>
+        <field name="mrw_enfranquicia" position="replace">
+            <field name="mrw_enfranquicia" attrs="{'invisible':[('dhl', '=', True)]}"/>
+        </field>
+        <field name="mrw_entregasabado" position="replace">
+            <field name="mrw_entregasabado" readonly="0" attrs="{'invisible':[('dhl', '=', True)]}"/>
+        </field>
+        <field name="mrw_reembolso" position="replace">
+            <field name="mrw_reembolso" readonly="0" attrs="{'invisible':[('dhl', '=', True)]}"/>
+        </field>
+        <field name="mrw_importe_reembolso" position="replace">
+            <field name="mrw_importe_reembolso" readonly="0" attrs="{'invisible':[('dhl', '=', True)]}"/>
+        </field>
+        <field name="carrier_error" position="replace">
+            <field name="carrier_error" attrs="{'invisible':[('dhl', '=', True)]}"/>
+        </field>
+        <field name="observaciones" position="replace">
+            <field name="observaciones" attrs="{'invisible':[('dhl', '=', True)]}"/>
+        </field>
+      </field>
+    </record>
+  </data>
+</openerp>

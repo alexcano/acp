@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data noupdate="1">
+
+<!--
+        PRODUCTOS CORREOS EXPRESS
+-->
+        <record id="PAQ10" model="acp_correxpress.product">
+          <field name="name">Paq 10</field>
+          <field name="codigo" >61</field>
+          <field name="sigla" >PAQ10</field>
+          <field name="cod_porte_pagado" >61</field>
+          <field name="cod_porte_debido" >68</field>
+        </record>
+        <record id="PAQ14" model="acp_correxpress.product">
+          <field name="name">Paq 14</field>
+          <field name="codigo" >62</field>
+          <field name="sigla" >PAQ14</field>
+          <field name="cod_porte_pagado" >62</field>
+          <field name="cod_porte_debido" >92</field>
+        </record>
+        <record id="PAQ24" model="acp_correxpress.product">
+          <field name="name">Paq 24</field>
+          <field name="codigo" >63</field>
+          <field name="sigla" >PAQ24</field>
+          <field name="cod_porte_pagado" >63</field>
+          <field name="cod_porte_debido" >98</field>
+        </record>
+        <record id="PAQ48" model="acp_correxpress.product">
+          <field name="name">Paq 48</field>
+          <field name="codigo" >64</field>
+          <field name="sigla" >PAQ48</field>
+          <field name="cod_porte_pagado" >64</field>
+          <field name="cod_porte_debido" ></field>
+        </record>
+        <record id="PAQ72" model="acp_correxpress.product">
+          <field name="name">Paq 72</field>
+          <field name="codigo" >65</field>
+          <field name="sigla" >PAQ72</field>
+          <field name="cod_porte_pagado" >45</field>
+          <field name="cod_porte_debido" ></field>
+        </record>
+        <record id="BAL" model="acp_correxpress.product">
+          <field name="name">Baleares</field>
+          <field name="codigo" >66</field>
+          <field name="sigla" >BAL</field>
+          <field name="cod_porte_pagado" >66</field>
+          <field name="cod_porte_debido" >46</field>
+        </record>
+        <record id="CANE" model="acp_correxpress.product">
+          <field name="name">Canarias Express</field>
+          <field name="codigo" >67</field>
+          <field name="sigla" >CANE</field>
+          <field name="cod_porte_pagado" >67</field>
+          <field name="cod_porte_debido" >97</field>
+        </record>
+        <record id="CANA" model="acp_correxpress.product">
+          <field name="name">Canarias Aéreo</field>
+          <field name="codigo" >68</field>
+          <field name="sigla" >CANA</field>
+          <field name="cod_porte_pagado" >68</field>
+          <field name="cod_porte_debido" >48</field>
+        </record>
+        <record id="CANM" model="acp_correxpress.product">
+          <field name="name">Canarias Marítimo</field>
+          <field name="codigo" >69</field>
+          <field name="sigla" >CANM</field>
+          <field name="cod_porte_pagado" >38</field>
+          <field name="cod_porte_debido" >56</field>
+        </record>
+        <record id="IE" model="acp_correxpress.product">
+          <field name="name">Internacional Estandar</field>
+          <field name="codigo" >90</field>
+          <field name="sigla" >IE</field>
+          <field name="cod_porte_pagado" >90</field>
+          <field name="cod_porte_debido" ></field>
+        </record>
+        <record id="IEX" model="acp_correxpress.product">
+          <field name="name">Internacional Express</field>
+          <field name="codigo" >91</field>
+          <field name="sigla" >IEX</field>
+          <field name="cod_porte_pagado" >41</field>
+          <field name="cod_porte_debido" ></field>
+        </record>
+        <record id="CCEX" model="acp_correxpress.product">
+          <field name="name">Campaña Cex</field>
+          <field name="codigo" >27</field>
+          <field name="sigla" >CCEX</field>
+          <field name="cod_porte_pagado" >27</field>
+          <field name="cod_porte_debido" ></field>
+        </record>
+        <record id="53EM" model="acp_correxpress.product">
+          <field name="name">EntregaPlus (ENTREGA + MANIPULACION)</field>
+          <field name="codigo" >53</field>
+          <field name="sigla" >53EM</field>
+          <field name="cod_porte_pagado" >53</field>
+          <field name="cod_porte_debido" ></field>
+        </record>
+        <record id="54ER" model="acp_correxpress.product">
+          <field name="name">EntregaPlus (ENTREGA + RECOGIDA)</field>
+          <field name="codigo" >54</field>
+          <field name="sigla" >54ER</field>
+          <field name="cod_porte_pagado" >54</field>
+          <field name="cod_porte_debido" ></field>
+        </record>
+        <record id="55ERM" model="acp_correxpress.product">
+          <field name="name">EntregaPlus  (ENTREGA +RECOGIDA +MANIPULACION)</field>
+          <field name="codigo" >55</field>
+          <field name="sigla" >55ERM</field>
+          <field name="cod_porte_pagado" >55</field>
+          <field name="cod_porte_debido" ></field>
+        </record>
+        <record id="PQOP" model="acp_correxpress.product">
+          <field name="name">Paqueteria Optica</field>
+          <field name="codigo" >76</field>
+          <field name="sigla" >PQOP</field>
+          <field name="cod_porte_pagado" >76</field>
+          <field name="cod_porte_debido" >96</field>
+        </record>
+        <record id="OPPP" model="acp_correxpress.product">
+          <field name="name">Optica Prepagado</field>
+          <field name="codigo" >77</field>
+          <field name="sigla" >OPPP</field>
+          <field name="cod_porte_pagado" >77</field>
+          <field name="cod_porte_debido" ></field>
+        </record>
+        <record id="CEXPOROPT" model="acp_correxpress.product">
+          <field name="name">Portugal Optica</field>
+          <field name="codigo" >73</field>
+          <field name="sigla" >CEXPOROPT</field>
+          <field name="cod_porte_pagado" >73</field>
+          <field name="cod_porte_debido" >72</field>
+        </record>
+
+        <record id="email_template_acp_correosexpress" model="email.template">
+            <field name="name">Enviar Aviso Tracking (Correo Express)</field>
+            <field name="email_from">${(object.user_id.email or '')|safe}</field>
+            <field name="subject">RC Innovations: El ${object.state in ('draft', 'sent') and 'Presupuesto' or 'Pedido'} (Ref ${object.opencart_id or object.name }) ha sido enviado</field>
+            <field name="email_recipients">${object.partner_invoice_id.id}</field>
+            <field name="lang">${object.partner_id.lang}</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html"><![CDATA[
+
+
+
+<div style="font-family: 'Lucida Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; ">
+
+    <p>Hola ${object.partner_id.name},</p><p>Su pedido: ${object.opencart_id or object.name} ha sido expedido con el número de Tracking : ${object.tracking}<br></p><p>Puede seguir su estado en: <br></p><p><a href="http://www.chronoexpres.com/chronoexpres/action/SegEnvio?accion=BUSCAR_EXP&amp;seguimiento=${object.tracking[11:40]}&amp;codPostal=${object.partner_shipping_id.zip}">Seguimiento Correo Express</a></p>
+    
+    
+
+    <p style="border-left: 1px solid #8e0000; margin-left: 30px;">
+       &nbsp;&nbsp;<strong>REFERENCIAS</strong><br>
+       &nbsp;&nbsp;Nº de pedido ERP: <strong>${object.name}</strong><br>
+       &nbsp;&nbsp;Total del pedido: <strong>${object.amount_total} ${object.pricelist_id.currency_id.name}</strong><br>
+       &nbsp;&nbsp;Fecha del pedido: ${object.date_order}<br>
+       % if object.origin:
+       &nbsp;&nbsp;Referencia del pedido: ${object.origin}<br>
+       % endif
+       % if object.client_order_ref:
+       &nbsp;&nbsp;Su referencia: ${object.client_order_ref}<br>
+       % endif
+       % if object.user_id:
+       &nbsp;&nbsp;Su contacto: <a href="mailto:${object.user_id.email or ''}?subject=Pedido%20${object.name}">${object.user_id.name}</a>
+       % endif
+    </p>
+
+    <br>
+    <p>Si tiene alguna pregunta, no dude en contactar con nosotros.</p>
+    <p>Gracias por escoger a RC Innovations!</p>
+    <img src="http://rc-innovations.es/image/data/Banners/logoweb.png">
+    <br>
+    <div style="width: 375px; margin: 0px; padding: 0px; background-color: #8E0000; border-top-left-radius: 5px 5px; border-top-right-radius: 5px 5px; background-repeat: repeat no-repeat;">
+        <h3 style="margin: 0px; padding: 2px 14px; font-size: 12px; color: #DDD;">
+            <strong style="text-transform:uppercase;">${object.company_id.name}</strong></h3>
+    </div>
+    <div style="width: 347px; margin: 0px; padding: 5px 14px; line-height: 16px; background-color: #F2F2F2;">
+        <span style="color: #222; margin-bottom: 5px; display: block; ">
+        % if object.company_id.street:
+            ${object.company_id.street}<br>
+        % endif
+        % if object.company_id.street2:
+            ${object.company_id.street2}<br>
+        % endif
+        % if object.company_id.city or object.company_id.zip:
+            ${object.company_id.zip} ${object.company_id.city}<br>
+        % endif
+        % if object.company_id.country_id:
+            ${object.company_id.state_id and ('%s, ' % object.company_id.state_id.name) or ''} ${object.company_id.country_id.name or ''}<br>
+        % endif
+        </span>
+        % if object.company_id.phone:
+            <div style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; ">
+                Teléfono:&nbsp; ${object.company_id.phone}
+            </div>
+        % endif
+        % if object.company_id.website:
+            <div>
+                Web :&nbsp;<a href="${object.company_id.website}">${object.company_id.website}</a>
+            </div>
+        %endif
+        <p></p>
+    </div>
+</div>
+            
+            ]]></field>
+        </record>
+  </data>
+</openerp>
